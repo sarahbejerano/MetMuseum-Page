@@ -10,6 +10,8 @@ import "../styles/index.scss";
 
 //import your own components
 import Layout from "./layout";
+import MetNavbar from "./component/navbar";
+import Footer from "./component/footer";
 
 //render your react application
 ReactDOM.render(<Layout />, document.querySelector("#app"));
