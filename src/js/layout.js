@@ -1,37 +1,29 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import { artCollection } from "./views/artCollection";
-import { exhibitions } from "./views/exhibitions";
-import { home } from "./views/home";
-import { about } from "./views/about";
-import injectContext from "./store/appContext";
-import { MetNavbar } from "./component/navbar";
+import { PageNavbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Home } from "./views/home";
+import { Art } from "./views/art";
+import { Photography } from "./views/photography";
+import injectContext from "./store/appContext";
 
-//create your first component
 const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
-
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<MetNavbar />
+					<PageNavbar />
 					<Switch>
 						<Route exact path="/">
-							<home />
+							<Home />
 						</Route>
-						<Route exact path="/Art-Collection">
-							<artCollection />
+						<Route exact path="/Art">
+							<Art />
 						</Route>
-						<Route exact path="/Exhibitions">
-							<exhibitions />
-						</Route>
-						<Route exact path="/About">
-							<about />
+						<Route exact path="/Photography">
+							<Photography />
 						</Route>
 					</Switch>
 					<Footer />
