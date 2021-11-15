@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Card } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import "../../styles/footer.scss";
 
 export const Footer = () => {
@@ -17,12 +17,7 @@ export const Footer = () => {
 					</svg>
 				</div>
 				<p>© 2000–2021 The Metropolitan Museum of Art. All rights reserved.</p>
-				{/* <Card className="adressCard" style={{ width: "30rem" }}>
-					<Card.Body>Fifth Avenue 1000 Fifth Avenue New York, NY 10028 Phone: 212 - 535 - 7710</Card.Body>
-				</Card> */}
 			</Container>
 		</Navbar>
 	);
 };
-
-// <Navbar fixed="bottom" />
