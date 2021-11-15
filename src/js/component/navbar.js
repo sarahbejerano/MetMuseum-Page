@@ -5,7 +5,7 @@ import { Navbar, Container, Nav, Form, FormControl, Button } from "react-bootstr
 
 export const PageNavbar = () => {
 	return (
-		<Navbar className="metNavBar" bg="danger" expand="lg">
+		<Navbar className="metNavBar" bg="danger">
 			<Container fluid>
 				<div className="met_logoNavBar">
 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40">
@@ -22,7 +22,7 @@ export const PageNavbar = () => {
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
-					<Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
+					<Nav className="me-auto my-2 my-lg-0">
 						<Nav.Link href="#action1">Home</Nav.Link>
 						<Nav.Link href="#action2">Art</Nav.Link>
 						<Nav.Link href="#action3">Photography</Nav.Link>

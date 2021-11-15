@@ -4,7 +4,7 @@ import "../../styles/footer.scss";
 
 export const Footer = () => {
 	return (
-		<Navbar bg="light" variant="outline-danger" expand="lg" fixed="bottom">
+		<Navbar bg="light" variant="outline-danger">
 			<Container fluid>
 				<div className="met_logo">
 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40">

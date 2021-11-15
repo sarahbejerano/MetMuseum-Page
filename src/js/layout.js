@@ -7,6 +7,7 @@ import { Home } from "./views/home";
 import { Art } from "./views/art";
 import { Photography } from "./views/photography";
 import injectContext from "./store/appContext";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
