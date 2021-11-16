@@ -10,9 +10,9 @@ export const Home = () => {
 	const { data: pieceOne, isValidating } = useSWR("/objects/437654", fetcher);
 	const { data: pieceTwo, isValidatingTwo } = useSWR("/objects/459092", fetcher);
 	const { data: pieceThree, isValidatingThree } = useSWR("/objects/436526", fetcher);
-	const { data: pieceFour, isValidatingFour } = useSWR("/objects/283717", fetcher);
-	const { data: pieceFive, isValidatingFive } = useSWR("/objects/283336", fetcher);
-	const { data: pieceSix, isValidatingSix } = useSWR("/objects/732791", fetcher);
+	const { data: pieceFour, isValidatingFour } = useSWR("/objects/283210", fetcher);
+	const { data: pieceFive, isValidatingFive } = useSWR("/objects/732764", fetcher);
+	const { data: pieceSix, isValidatingSix } = useSWR("/objects/652152", fetcher);
 	return (
 		<Container>
 			<Carousel className="previewImages" variant="light" fluid="lg">
