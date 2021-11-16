@@ -15,16 +15,16 @@ export const Home = () => {
 			<Carousel className="previewImages" variant="light" fluid="lg">
 				{/* /toda la informacion de pieceOne se cargara una vez que la variable pieceOne este definida */}
 				{pieceOne && (
-					<Carousel.Item>
+					<Carousel.Item className="carouselItem">
 						<img
 							className="d-block w-100 carousel-img"
 							src={pieceOne.primaryImageSmall}
 							alt="First slide"
 						/>
 						<Carousel.Caption>
-							<h2>{pieceOne.title}</h2>
+							<h3>{pieceOne.title}</h3>
 							<p>{pieceOne.artistDisplayName}</p>
-							<p>{pieceOne.objectDate}</p>
+							{/* <h6>{pieceOne.objectDate}</h6> */}
 						</Carousel.Caption>
 					</Carousel.Item>
 				)}

@@ -9,7 +9,7 @@
 .carousel-img {
     max-height: 500px;
    object-fit: none;
-   background-color:#dc3546c9;
+   background-color:#f7efefc9;
   
 }
 
@@ -27,6 +27,6 @@ width: 100%;
     color:white;
 }
 
-h3{
-    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0))
+h3.p {
+    filter: drop-shadow(0 0 2rem rgb(0, 0, 0))
 }
