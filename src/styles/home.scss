@@ -9,8 +9,24 @@
 .carousel-img {
     max-height: 500px;
    object-fit: none;
+   background-color:#dc3546c9;
+  
 }
 
 .artName{
-    padding-top: 40px;
+font-family: Arial, Helvetica, sans-serif ;
+font-size: large;
+display: flex;
+justify-content: center;
+padding-left: 40px;
+padding-top: 20px;
+width: 100%;
+}
+
+.navbar-light .navbar-brand {
+    color:white;
+}
+
+h3{
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0))
 }

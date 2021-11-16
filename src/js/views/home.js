@@ -13,17 +13,21 @@ export const Home = () => {
 	return (
 		<Container>
 			<Carousel className="previewImages" variant="light" fluid="lg">
-				<Carousel.Item>
-					<img
-						className="d-block w-100 carousel-img"
-						src={pieceOne ? pieceOne.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
-						alt="First slide"
-					/>
-					<Carousel.Caption>
-						<h3>First slide label</h3>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
+				{/* /toda la informacion de pieceOne se cargara una vez que la variable pieceOne este definida */}
+				{pieceOne && (
+					<Carousel.Item>
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceOne.primaryImageSmall}
+							alt="First slide"
+						/>
+						<Carousel.Caption>
+							<h2>{pieceOne.title}</h2>
+							<p>{pieceOne.artistDisplayName}</p>
+							<p>{pieceOne.objectDate}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
 				<Carousel.Item>
 					<img
 						className="d-block w-100 carousel-img"
@@ -48,9 +52,13 @@ export const Home = () => {
 				</Carousel.Item>
 			</Carousel>
 			<>
-				<Navbar bg="light">
-					<div>
-						<Navbar.Brand className="artName">Art</Navbar.Brand>
+				<Navbar bg="danger">
+					<div className="artName">
+						<Navbar.Brand>
+							<p>
+								<b>ART COLLECTION HIGHLIGHTS</b>
+							</p>
+						</Navbar.Brand>
 					</div>
 				</Navbar>
 				{/* isValidating es una variable que esta esperando al respuesta de un request */}
