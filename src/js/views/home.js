@@ -4,19 +4,19 @@ import useSWR from "swr";
 import { fetcher } from "../fetcher";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/home.scss";
-import { Card, Button, Row, Col, Container, Carousel } from "react-bootstrap";
+import { Card, Button, Row, Col, Container, Carousel, Navbar } from "react-bootstrap";
 
 export const Home = () => {
-	const { data: pieceOne, isValidating } = useSWR("/objects/10946", fetcher);
-	// const { data: pieceTwo, isValidating } = useSWR("/objects/10946", fetcher);
-	// const { data: pieceThree, isValidating } = useSWR("/objects/10946", fetcher);
+	const { data: pieceOne, isValidating } = useSWR("/objects/437654", fetcher);
+	const { data: pieceTwo, isValidatingTwo } = useSWR("/objects/459092", fetcher);
+	const { data: pieceThree, isValidatingThree } = useSWR("/objects/436526", fetcher);
 	return (
 		<Container>
-			<Carousel className="previewImages" variant="light" fluid="sm">
+			<Carousel className="previewImages" variant="light" fluid="lg">
 				<Carousel.Item>
 					<img
 						className="d-block w-100 carousel-img"
-						src={pieceOne ? pieceOne.primaryImage : "https://picsum.photos/2/1?img=1"}
+						src={pieceOne ? pieceOne.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
 						alt="First slide"
 					/>
 					<Carousel.Caption>
@@ -25,26 +25,39 @@ export const Home = () => {
 					</Carousel.Caption>
 				</Carousel.Item>
 				<Carousel.Item>
-					<img className="d-block w-100" src="https://picsum.photos/500/300?img=2" alt="Second slide" />
-
+					<img
+						className="d-block w-100 carousel-img"
+						src={pieceTwo ? pieceTwo.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
+						alt="Second slide"
+					/>
 					<Carousel.Caption>
-						<h3>Second slide label</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						<h3>First slide label</h3>
+						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 					</Carousel.Caption>
 				</Carousel.Item>
 				<Carousel.Item>
-					<img className="d-block w-100" src="https://picsum.photos/500/300?img=3" alt="Third slide" />
+					<img
+						className="d-block w-100 carousel-img"
+						src={pieceThree ? pieceThree.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
+						alt="Third slide"
+					/>
 					<Carousel.Caption>
-						<h3>Third slide label</h3>
-						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+						<h3>First slide label</h3>
+						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 					</Carousel.Caption>
 				</Carousel.Item>
 			</Carousel>
 			<>
-				<h2 className="artName">ART</h2>
+				<Navbar bg="light">
+					<div>
+						<Navbar.Brand className="artName">Art</Navbar.Brand>
+					</div>
+				</Navbar>
 				{/* isValidating es una variable que esta esperando al respuesta de un request */}
 				{/* de la linea 40 a la 46 es un render condicional */}
 				{isValidating &&
+					isValidatingTwo &&
+					isValidatingThree &&
 					!pieceOne && (
 						<div className="spinner-border" role="status">
 							<span className="visually-hidden">Loading...</span>
@@ -55,7 +68,7 @@ export const Home = () => {
 						{/* *si la pieceOne esta definida renderea el card */}
 						{pieceOne && (
 							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceOne.primaryImage} />
+								<Card.Img variant="top" src={pieceOne.primaryImageSmall} />
 								<Card.Body>
 									<Card.Title>{pieceOne.title}</Card.Title>
 									<Card.Text>{pieceOne.artistDisplayName}</Card.Text>
@@ -65,31 +78,28 @@ export const Home = () => {
 						)}
 					</Col>
 					<Col xs="6" sm="4">
-						<Card style={{ width: "18rem" }}>
-							<Card.Img variant="top" src="holder.js/100px180" />
-							<Card.Body>
-								<Card.Title>Card Title</Card.Title>
-								<Card.Text>
-									Some quick example text to build on the card title and make up the bulk of the card
-									content.
-								</Card.Text>
-								<Button variant="primary">Go somewhere</Button>
-							</Card.Body>
-						</Card>
+						{pieceTwo && (
+							<Card style={{ width: "18rem" }}>
+								<Card.Img variant="top" src={pieceTwo.primaryImageSmall} />
+								<Card.Body>
+									<Card.Title>{pieceTwo.title}</Card.Title>
+									<Card.Text>{pieceTwo.artistDisplayName}</Card.Text>
+									<Button variant="primary">Go somewhere</Button>
+								</Card.Body>
+							</Card>
+						)}
 					</Col>
-					<Col sm="4">
-						{" "}
-						<Card style={{ width: "18rem" }}>
-							<Card.Img variant="top" src="holder.js/100px180" />
-							<Card.Body>
-								<Card.Title>Card Title</Card.Title>
-								<Card.Text>
-									Some quick example text to build on the card title and make up the bulk of the card
-									content.
-								</Card.Text>
-								<Button variant="primary">Go somewhere</Button>
-							</Card.Body>
-						</Card>
+					<Col xs="6" sm="4">
+						{pieceThree && (
+							<Card style={{ width: "18rem" }}>
+								<Card.Img variant="top" src={pieceThree.primaryImageSmall} />
+								<Card.Body>
+									<Card.Title>{pieceThree.title}</Card.Title>
+									<Card.Text>{pieceThree.artistDisplayName}</Card.Text>
+									<Button variant="primary">Go somewhere</Button>
+								</Card.Body>
+							</Card>
+						)}
 					</Col>
 				</Row>
 			</>
