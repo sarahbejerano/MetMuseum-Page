@@ -10,6 +10,9 @@ export const Home = () => {
 	const { data: pieceOne, isValidating } = useSWR("/objects/437654", fetcher);
 	const { data: pieceTwo, isValidatingTwo } = useSWR("/objects/459092", fetcher);
 	const { data: pieceThree, isValidatingThree } = useSWR("/objects/436526", fetcher);
+	const { data: pieceFour, isValidatingFour } = useSWR("/objects/283717", fetcher);
+	const { data: pieceFive, isValidatingFive } = useSWR("/objects/283336", fetcher);
+	const { data: pieceSix, isValidatingSix } = useSWR("/objects/732791", fetcher);
 	return (
 		<Container>
 			<Carousel className="previewImages" variant="light" fluid="lg">
@@ -24,32 +27,35 @@ export const Home = () => {
 						<Carousel.Caption>
 							<h3>{pieceOne.title}</h3>
 							<p>{pieceOne.artistDisplayName}</p>
-							{/* <h6>{pieceOne.objectDate}</h6> */}
 						</Carousel.Caption>
 					</Carousel.Item>
 				)}
-				<Carousel.Item>
-					<img
-						className="d-block w-100 carousel-img"
-						src={pieceTwo ? pieceTwo.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
-						alt="Second slide"
-					/>
-					<Carousel.Caption>
-						<h3>First slide label</h3>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<img
-						className="d-block w-100 carousel-img"
-						src={pieceThree ? pieceThree.primaryImageSmall : "https://picsum.photos/2/1?img=1"}
-						alt="Third slide"
-					/>
-					<Carousel.Caption>
-						<h3>First slide label</h3>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</Carousel.Caption>
-				</Carousel.Item>
+				{pieceTwo && (
+					<Carousel.Item className="carouselItem2">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceTwo.primaryImageSmall}
+							alt="Second slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceTwo.title}</h3>
+							<p>{pieceTwo.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
+				{pieceThree && (
+					<Carousel.Item className="carouselItem3">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceThree.primaryImageSmall}
+							alt="Third slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceThree.title}</h3>
+							<p>{pieceThree.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
 			</Carousel>
 			<>
 				<Navbar bg="danger">
@@ -80,7 +86,7 @@ export const Home = () => {
 								<Card.Body>
 									<Card.Title>{pieceOne.title}</Card.Title>
 									<Card.Text>{pieceOne.artistDisplayName}</Card.Text>
-									<Button variant="primary">Go somewhere</Button>
+									<Button variant="danger">More Details</Button>
 								</Card.Body>
 							</Card>
 						)}
@@ -92,7 +98,7 @@ export const Home = () => {
 								<Card.Body>
 									<Card.Title>{pieceTwo.title}</Card.Title>
 									<Card.Text>{pieceTwo.artistDisplayName}</Card.Text>
-									<Button variant="primary">Go somewhere</Button>
+									<Button variant="danger">More Details</Button>
 								</Card.Body>
 							</Card>
 						)}
@@ -104,7 +110,68 @@ export const Home = () => {
 								<Card.Body>
 									<Card.Title>{pieceThree.title}</Card.Title>
 									<Card.Text>{pieceThree.artistDisplayName}</Card.Text>
-									<Button variant="primary">Go somewhere</Button>
+									<Button variant="danger">More Details</Button>
+								</Card.Body>
+							</Card>
+						)}
+					</Col>
+				</Row>
+			</>
+			<>
+				<Navbar bg="danger">
+					<div className="photoName">
+						<Navbar.Brand>
+							<p>
+								<b>PHOTOGRAPHY COLLECTION HIGHLIGHTS</b>
+							</p>
+						</Navbar.Brand>
+					</div>
+				</Navbar>
+				{/* isValidating es una variable que esta esperando al respuesta de un request */}
+				{/* de la linea 40 a la 46 es un render condicional */}
+				{isValidatingFour &&
+					isValidatingFive &&
+					isValidatingSix &&
+					!pieceOne && (
+						<div className="spinner-border" role="status">
+							<span className="visually-hidden">Loading...</span>
+						</div>
+					)}
+				<Row className="fourRow">
+					<Col xs="6" sm="4">
+						{/* *si la pieceOne esta definida renderea el card */}
+						{pieceFour && (
+							<Card style={{ width: "18rem" }}>
+								<Card.Img variant="top" src={pieceFour.primaryImageSmall} />
+
+								<Card.Body>
+									<Card.Title>{pieceFour.title}</Card.Title>
+									<Card.Text>{pieceFour.artistDisplayName}</Card.Text>
+									<Button variant="danger">More Details</Button>
+								</Card.Body>
+							</Card>
+						)}
+					</Col>
+					<Col xs="6" sm="4">
+						{pieceFive && (
+							<Card style={{ width: "18rem" }}>
+								<Card.Img variant="top" src={pieceFive.primaryImageSmall} />
+								<Card.Body>
+									<Card.Title>{pieceFive.title}</Card.Title>
+									<Card.Text>{pieceFive.artistDisplayName}</Card.Text>
+									<Button variant="danger">More Details</Button>
+								</Card.Body>
+							</Card>
+						)}
+					</Col>
+					<Col xs="6" sm="4">
+						{pieceSix && (
+							<Card style={{ width: "18rem" }}>
+								<Card.Img variant="top" src={pieceSix.primaryImageSmall} />
+								<Card.Body>
+									<Card.Title>{pieceSix.title}</Card.Title>
+									<Card.Text>{pieceSix.artistDisplayName}</Card.Text>
+									<Button variant="danger">More Details</Button>
 								</Card.Body>
 							</Card>
 						)}
