@@ -17,15 +17,15 @@ export const PageNavbar = () => {
 						/>
 					</svg>
 				</div>
-				<Navbar.Brand href="#" bg="warning" text="dark">
+				<Navbar.Brand href="/" bg="warning" text="dark">
 					Metropolitan Museum of Art Highlights
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto my-2 my-lg-0">
-						<Nav.Link href="#action1">Home</Nav.Link>
-						<Nav.Link href="#action2">Art</Nav.Link>
-						<Nav.Link href="#action3">Photography</Nav.Link>
+						<Nav.Link href="/">Home</Nav.Link>
+						<Nav.Link href="/art">Art</Nav.Link>
+						<Nav.Link href="/photography">Photography</Nav.Link>
 						<Button className="favoriteBotton" variant="outline-light">
 							{" "}
 							Favorites

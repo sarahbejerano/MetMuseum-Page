@@ -5,9 +5,10 @@ import { fetcher } from "../fetcher";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/home.scss";
 import { ImageCard } from "../component/card";
-import { Card, Button, Row, Col, Container, Carousel, Navbar } from "react-bootstrap";
+import { Row, Col, Container, Carousel, Navbar } from "react-bootstrap";
 
 export const Home = () => {
+	// TODO: remplazar por swr Infinite
 	const { data: pieceOne, isValidating } = useSWR("/objects/437654", fetcher);
 	const { data: pieceTwo, isValidatingTwo } = useSWR("/objects/459092", fetcher);
 	const { data: pieceThree, isValidatingThree } = useSWR("/objects/436526", fetcher);
@@ -121,6 +122,7 @@ export const Home = () => {
 								imageUrl={pieceOne.primaryImageSmall}
 								title={pieceOne.title}
 								artist={pieceOne.artistDisplayName}
+								id={pieceOne.objectID}
 							/>
 						)}
 					</Col>
@@ -130,6 +132,7 @@ export const Home = () => {
 								imageUrl={pieceTwo.primaryImageSmall}
 								title={pieceTwo.title}
 								artist={pieceTwo.artistDisplayName}
+								id={pieceTwo.objectID}
 							/>
 						)}
 					</Col>
@@ -139,6 +142,7 @@ export const Home = () => {
 								imageUrl={pieceThree.primaryImageSmall}
 								title={pieceThree.title}
 								artist={pieceThree.artistDisplayName}
+								id={pieceThree.objectID}
 							/>
 						)}
 					</Col>
@@ -173,6 +177,7 @@ export const Home = () => {
 								imageUrl={pieceFour.primaryImageSmall}
 								title={pieceFour.title}
 								artist={pieceFour.artistDisplayName}
+								id={pieceFour.objectID}
 							/>
 						)}
 					</Col>
@@ -192,6 +197,7 @@ export const Home = () => {
 								imageUrl={pieceSix.primaryImageSmall}
 								title={pieceSix.title}
 								artist={pieceSix.artistDisplayName}
+								id={pieceSix.objectID}
 							/>
 						)}
 					</Col>

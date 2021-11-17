@@ -4,8 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { PageNavbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Home } from "./views/home";
-// import { Card } from "./component/card";
 import { Art } from "./views/art";
+import { DetailPage } from "./views/detail";
 import { Photography } from "./views/photography";
 import injectContext from "./store/appContext";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,12 +21,15 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/Art">
+						<Route exact path="/art">
 							<Art />
 						</Route>
-						{/* TODO: mirar en la doc del Router como se crea una ruta con parametro dinamico */}
-						<Route exact path="/Photography">
+						<Route exact path="/photography">
 							<Photography />
+						</Route>
+						{/* :id es un parametro que te permite que te permite que la url sea dinamica */}
+						<Route exact path="/detail/:id">
+							<DetailPage />
 						</Route>
 					</Switch>
 					<Footer />
