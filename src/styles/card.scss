@@ -1,0 +1,16 @@
+.cardImage{
+  display: block;
+  height: 70%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardFull{
+    height: 600px;
+    border-radius: 0px;
+    border: none;
+}
+
+.cardBody{
+    height: 30%;
+}

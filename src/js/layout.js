@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { PageNavbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Home } from "./views/home";
+// import { Card } from "./component/card";
 import { Art } from "./views/art";
 import { Photography } from "./views/photography";
 import injectContext from "./store/appContext";
@@ -23,6 +24,7 @@ const Layout = () => {
 						<Route exact path="/Art">
 							<Art />
 						</Route>
+						{/* TODO: mirar en la doc del Router como se crea una ruta con parametro dinamico */}
 						<Route exact path="/Photography">
 							<Photography />
 						</Route>

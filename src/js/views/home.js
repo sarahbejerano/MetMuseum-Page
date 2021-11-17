@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { fetcher } from "../fetcher";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/home.scss";
+import { ImageCard } from "../component/card";
 import { Card, Button, Row, Col, Container, Carousel, Navbar } from "react-bootstrap";
 
 export const Home = () => {
@@ -56,6 +57,41 @@ export const Home = () => {
 						</Carousel.Caption>
 					</Carousel.Item>
 				)}
+				{pieceFour && (
+					<Carousel.Item className="carouselItem4">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceFour.primaryImageSmall}
+							alt="Fourth slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceFour.title}</h3>
+							<p>{pieceFour.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
+				{pieceFive && (
+					<Carousel.Item className="carouselItem5">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceFive.primaryImageSmall}
+							alt="Fifth slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceFive.title}</h3>
+							<p>{pieceFive.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
+				{pieceSix && (
+					<Carousel.Item className="carouselItem6">
+						<img className="d-block w-100 carousel-img" src={pieceSix.primaryImageSmall} alt="Six slide" />
+						<Carousel.Caption>
+							<h3>{pieceSix.title}</h3>
+							<p>{pieceSix.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
 			</Carousel>
 			<>
 				<Navbar bg="danger">
@@ -77,42 +113,33 @@ export const Home = () => {
 							<span className="visually-hidden">Loading...</span>
 						</div>
 					)}
-				<Row className="firstRow">
-					<Col xs="6" sm="4">
+				<Row>
+					<Col>
 						{/* *si la pieceOne esta definida renderea el card */}
 						{pieceOne && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceOne.primaryImageSmall} />
-								<Card.Body>
-									<Card.Title>{pieceOne.title}</Card.Title>
-									<Card.Text>{pieceOne.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceOne.primaryImageSmall}
+								title={pieceOne.title}
+								artist={pieceOne.artistDisplayName}
+							/>
 						)}
 					</Col>
-					<Col xs="6" sm="4">
+					<Col>
 						{pieceTwo && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceTwo.primaryImageSmall} />
-								<Card.Body>
-									<Card.Title>{pieceTwo.title}</Card.Title>
-									<Card.Text>{pieceTwo.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceTwo.primaryImageSmall}
+								title={pieceTwo.title}
+								artist={pieceTwo.artistDisplayName}
+							/>
 						)}
 					</Col>
-					<Col xs="6" sm="4">
+					<Col>
 						{pieceThree && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceThree.primaryImageSmall} />
-								<Card.Body>
-									<Card.Title>{pieceThree.title}</Card.Title>
-									<Card.Text>{pieceThree.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceThree.primaryImageSmall}
+								title={pieceThree.title}
+								artist={pieceThree.artistDisplayName}
+							/>
 						)}
 					</Col>
 				</Row>
@@ -127,6 +154,8 @@ export const Home = () => {
 						</Navbar.Brand>
 					</div>
 				</Navbar>
+			</>
+			<>
 				{/* isValidating es una variable que esta esperando al respuesta de un request */}
 				{/* de la linea 40 a la 46 es un render condicional */}
 				{isValidatingFour &&
@@ -137,43 +166,33 @@ export const Home = () => {
 							<span className="visually-hidden">Loading...</span>
 						</div>
 					)}
-				<Row className="fourRow">
-					<Col xs="6" sm="4">
-						{/* *si la pieceOne esta definida renderea el card */}
+				<Row>
+					<Col>
 						{pieceFour && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceFour.primaryImageSmall} />
-
-								<Card.Body>
-									<Card.Title>{pieceFour.title}</Card.Title>
-									<Card.Text>{pieceFour.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceFour.primaryImageSmall}
+								title={pieceFour.title}
+								artist={pieceFour.artistDisplayName}
+							/>
 						)}
 					</Col>
-					<Col xs="6" sm="4">
+					<Col>
 						{pieceFive && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceFive.primaryImageSmall} />
-								<Card.Body>
-									<Card.Title>{pieceFive.title}</Card.Title>
-									<Card.Text>{pieceFive.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceFive.primaryImageSmall}
+								title={pieceFive.title}
+								artist={pieceFive.artistDisplayName}
+								id={pieceFive.objectID}
+							/>
 						)}
 					</Col>
-					<Col xs="6" sm="4">
+					<Col>
 						{pieceSix && (
-							<Card style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={pieceSix.primaryImageSmall} />
-								<Card.Body>
-									<Card.Title>{pieceSix.title}</Card.Title>
-									<Card.Text>{pieceSix.artistDisplayName}</Card.Text>
-									<Button variant="danger">More Details</Button>
-								</Card.Body>
-							</Card>
+							<ImageCard
+								imageUrl={pieceSix.primaryImageSmall}
+								title={pieceSix.title}
+								artist={pieceSix.artistDisplayName}
+							/>
 						)}
 					</Col>
 				</Row>
