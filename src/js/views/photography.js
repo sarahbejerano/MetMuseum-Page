@@ -21,7 +21,3 @@ export const Photography = props => {
 	// 	</div>
 	// );
 };
-
-// Photography.propTypes = {
-// 	match: PropTypes.object
-// };

@@ -14,6 +14,7 @@ export const DetailPage = () => {
 	return (
 		<div>
 			{/* si esta validando y no hay data muestra el el loading */}
+			{/* si Isvalidating es diferente a data enconces se muestra Loading */}
 			{isValidating &&
 				!data && (
 					<div className="spinner-border" role="status">
@@ -23,6 +24,7 @@ export const DetailPage = () => {
 			<Container fluid="md" className="detailContent">
 				<Row>
 					<Col className="imageContainer">{data && <Image src={data.primaryImage} fluid />}</Col>
+					{/* .primaryImage es un propiedad de data */}
 					<Col className="imageContainer">{data && <Image src={data.additionalImages} fluid />}</Col>
 				</Row>
 				<Row className="bg-secondary border">
