@@ -28,9 +28,15 @@ export const DetailPage = () => {
 					<Col className="imageContainer">{data && <Image src={data.additionalImages} fluid />}</Col>
 				</Row>
 				<Row className="bg-secondary border">
-					<Col>TITLE</Col>
-					<Col>ARTIST NAME</Col>
-					<Col>DATE</Col>
+					<Col>
+						<h6>TITLE</h6>
+					</Col>
+					<Col>
+						<h6>ARTIST NAME</h6>
+					</Col>
+					<Col>
+						<h6>DATE</h6>
+					</Col>
 				</Row>
 				<Row className="bg-light border">
 					{data && <Col>{data.title}</Col>}
@@ -38,9 +44,15 @@ export const DetailPage = () => {
 					{data && <Col>{data.objectDate}</Col>}
 				</Row>
 				<Row className="bg-secondary border">
-					<Col>CLASSIFICATION</Col>
-					<Col>MEDIUM</Col>
-					<Col>DIMENSIONS</Col>
+					<Col>
+						<h6>CLASSIFICATION</h6>
+					</Col>
+					<Col>
+						<h6>MEDIUM</h6>
+					</Col>
+					<Col>
+						<h6>DIMENSIONS</h6>
+					</Col>
 				</Row>
 				<Row className="bg-light border">
 					{data && <Col>{data.classification}</Col>}
