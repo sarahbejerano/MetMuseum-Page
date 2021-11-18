@@ -15,6 +15,9 @@ export const Home = () => {
 	const { data: pieceFour, isValidatingFour } = useSWR("/objects/283210", fetcher);
 	const { data: pieceFive, isValidatingFive } = useSWR("/objects/732764", fetcher);
 	const { data: pieceSix, isValidatingSix } = useSWR("/objects/652152", fetcher);
+	const { data: pieceSeven, isValidatingSeven } = useSWR("/objects/289307", fetcher);
+	const { data: pieceEight, isValidatingEight } = useSWR("/objects/283193", fetcher);
+	const { data: pieceNine, isValidatingNine } = useSWR("/objects/287985", fetcher);
 	return (
 		<Container>
 			<Carousel className="previewImages" variant="light" fluid="lg">
@@ -93,13 +96,39 @@ export const Home = () => {
 						</Carousel.Caption>
 					</Carousel.Item>
 				)}
+				{pieceSeven && (
+					<Carousel.Item className="carouselItem7">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceSeven.primaryImageSmall}
+							alt="Seventh slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceSeven.title}</h3>
+							<p>{pieceSeven.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
+				{pieceEight && (
+					<Carousel.Item className="carouselItem8">
+						<img
+							className="d-block w-100 carousel-img"
+							src={pieceEight.primaryImageSmall}
+							alt="Eight slide"
+						/>
+						<Carousel.Caption>
+							<h3>{pieceEight.title}</h3>
+							<p>{pieceEight.artistDisplayName}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				)}
 			</Carousel>
 			<>
 				<Navbar bg="danger">
 					<div className="artName">
 						<Navbar.Brand>
 							<p>
-								<b>ART COLLECTION HIGHLIGHTS</b>
+								<b>PAINTINGS COLLECTION HIGHLIGHTS</b>
 							</p>
 						</Navbar.Brand>
 					</div>
