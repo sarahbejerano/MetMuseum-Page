@@ -24,7 +24,7 @@ export const PageNavbar = () => {
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto my-2 my-lg-0">
 						<Nav.Link href="/">Home</Nav.Link>
-						<Nav.Link href="/art">Paintings </Nav.Link>
+						<Nav.Link href="/painting">Painting</Nav.Link>
 						<Nav.Link href="/photography">Photography</Nav.Link>
 						<Button className="favoriteBotton" variant="outline-light">
 							{" "}
