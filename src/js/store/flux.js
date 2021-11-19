@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ favorites: newFavorites });
 				// aqui le estoy diciendo al set Store que guarde los new favorites en los favorites/
 			},
-			removeFavorites: id => {
+			removeFavorites: ({ id }) => {
 				const { favorites } = getStore();
 				const { [id]: remove, ...newFavorites } = favorites;
 				setStore({ favorites: newFavorites });
