@@ -1,42 +1,21 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+		// returning un objeto que tiene dentro propiedades: store and action, que a su vez tienen objetos dentro. Action tiene funciones como objetos dentro
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			favorites: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			addFavorites: ({ id, title }) => {
+				const { favorites } = getStore();
+				const newFavorites = { ...favorites, [id]: title };
+				setStore({ favorites: newFavorites });
+				// aqui le estoy diciendo al set Store que guarde los new favorites en los favorites/
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			removeFavorites: id => {
+				const { favorites } = getStore();
+				const { [id]: remove, ...newFavorites } = favorites;
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};

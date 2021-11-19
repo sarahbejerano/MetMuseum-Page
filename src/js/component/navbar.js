@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.scss";
-import { Navbar, Container, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, Form, FormControl, Button, Dropdown } from "react-bootstrap";
+import { useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const PageNavbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<Navbar className="metNavBar" bg="danger">
-			<Container lg={true}>
+			<Container>
 				<div className="met_logoNavBar">
 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40">
 						<path
@@ -26,10 +29,21 @@ export const PageNavbar = () => {
 						<Nav.Link href="/">Home</Nav.Link>
 						<Nav.Link href="/painting">Painting</Nav.Link>
 						<Nav.Link href="/photography">Photography</Nav.Link>
-						<Button className="favoriteBotton" variant="outline-light">
-							{" "}
-							Favorites
-						</Button>
+						{Object.keys(store.favorites).length > 0 && (
+							<Dropdown>
+								<Dropdown.Toggle variant="danger" id="dropdown-basic">
+									Favorites
+								</Dropdown.Toggle>
+								<Dropdown.Menu>
+									{Object.keys(store.favorites).map(id => (
+										<Dropdown.Item key={id} href={`detail/${id}`}>
+											{" "}
+											{store.favorites[id]}
+										</Dropdown.Item>
+									))}
+								</Dropdown.Menu>
+							</Dropdown>
+						)}
 					</Nav>
 					<Form className="d-flex">
 						<FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />

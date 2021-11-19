@@ -39,4 +39,5 @@ const Layout = () => {
 	);
 };
 
+// aqui se esta devolviendo la funcion de appContext.js con el layout como propiedad
 export default injectContext(Layout);
