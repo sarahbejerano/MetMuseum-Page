@@ -144,7 +144,7 @@ export const Home = () => {
 						</div>
 					)}
 				<Row>
-					<Col>
+					<Col xs={12} md={4}>
 						{/* *si la pieceOne esta definida renderea el card */}
 						{pieceOne && (
 							<ImageCard
@@ -155,7 +155,7 @@ export const Home = () => {
 							/>
 						)}
 					</Col>
-					<Col>
+					<Col xs={12} md={4}>
 						{pieceTwo && (
 							<ImageCard
 								imageUrl={pieceTwo.primaryImageSmall}
@@ -165,7 +165,7 @@ export const Home = () => {
 							/>
 						)}
 					</Col>
-					<Col>
+					<Col xs={12} md={4}>
 						{pieceThree && (
 							<ImageCard
 								imageUrl={pieceThree.primaryImageSmall}

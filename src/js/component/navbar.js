@@ -6,7 +6,7 @@ import { Navbar, Container, Nav, Form, FormControl, Button } from "react-bootstr
 export const PageNavbar = () => {
 	return (
 		<Navbar className="metNavBar" bg="danger">
-			<Container fluid>
+			<Container lg={true}>
 				<div className="met_logoNavBar">
 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40">
 						<path
