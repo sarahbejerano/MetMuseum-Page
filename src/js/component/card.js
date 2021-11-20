@@ -31,14 +31,15 @@ export const ImageCard = ({ imageUrl, title, artist, id }) => {
 				<Card.Title>{title}</Card.Title>
 				<Card.Text>{artist}</Card.Text>
 				{/* lo ques estoy diciendo es al boton que me dirija a la ruta /detail + el id de la obra(en este caso) */}
-			<
-				<Button href={`detail/${id}`} variant="danger">
-					More Details
-				</Button>
-				<Button variant="danger" onClick={() => handleFavoriteButton()}>
-					{/* isFavorite es un boleano, que si es true entonces tenemos el corazon fill sino empty */}
-					{isFavorite ? <HeartFill size={20} /> : <Heart size={20} />}
-				</Button>
+				<div className="footerCard">
+					<Button href={`detail/${id}`} variant="danger">
+						More Details
+					</Button>
+					<Button className="heartbutton" variant="danger" onClick={() => handleFavoriteButton()}>
+						{/* isFavorite es un boleano, que si es true entonces tenemos el corazon fill sino empty */}
+						{isFavorite ? <HeartFill size={20} /> : <Heart size={20} />}
+					</Button>
+				</div>
 			</Card.Body>
 		</Card>
 	);

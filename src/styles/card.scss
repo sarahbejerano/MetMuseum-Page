@@ -13,4 +13,16 @@
 
 .cardBody{
     height: 30%;
+   flex-direction: column;
+   display: flex;
+   margin-bottom: 2px;
+}
+
+.heartbutton{
+  margin-left: auto;
+}
+
+.footerCard{
+  display: flex;
+  margin-top: auto;
 }

@@ -8,7 +8,7 @@ import { Context } from "../store/appContext";
 export const PageNavbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<Navbar className="metNavBar" bg="danger">
+		<Navbar className="metNavBar" bg="danger" variant="dark">
 			<Container>
 				<div className="met_logoNavBar">
 					<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40">
@@ -21,7 +21,7 @@ export const PageNavbar = () => {
 					</svg>
 				</div>
 				<Navbar.Brand href="/" bg="warning" text="dark">
-					Metropolitan Museum of Art Highlights
+					Metropolitan Museum of Art
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
