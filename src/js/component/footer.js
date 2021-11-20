@@ -5,7 +5,7 @@ import "../../styles/footer.scss";
 export const Footer = () => {
 	return (
 		<Navbar bg="light" variant="outline-danger">
-			<Container>
+			<Container xs={12} md={4}>
 				<Row>
 					<Col className="nameFooter" bg="secondary">
 						<div className="met_logo">

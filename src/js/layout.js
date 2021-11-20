@@ -8,7 +8,6 @@ import { Painting } from "./views/painting";
 import { DetailPage } from "./views/detail";
 import { Photography } from "./views/photography";
 import injectContext from "./store/appContext";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";

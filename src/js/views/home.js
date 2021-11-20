@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import useSWR from "swr";
 import { fetcher } from "../fetcher";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../../styles/home.scss";
 import { ImageCard } from "../component/card";
 import { Row, Col, Container, Carousel, Navbar } from "react-bootstrap";
@@ -200,7 +200,7 @@ export const Home = () => {
 						</div>
 					)}
 				<Row>
-					<Col>
+					<Col xs={12} md={4}>
 						{pieceFour && (
 							<ImageCard
 								imageUrl={pieceFour.primaryImageSmall}
@@ -210,7 +210,7 @@ export const Home = () => {
 							/>
 						)}
 					</Col>
-					<Col>
+					<Col xs={12} md={4}>
 						{pieceFive && (
 							<ImageCard
 								imageUrl={pieceFive.primaryImageSmall}
@@ -220,7 +220,7 @@ export const Home = () => {
 							/>
 						)}
 					</Col>
-					<Col>
+					<Col xs={12} md={4}>
 						{pieceSix && (
 							<ImageCard
 								imageUrl={pieceSix.primaryImageSmall}

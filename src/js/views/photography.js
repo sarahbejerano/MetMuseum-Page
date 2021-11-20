@@ -1,8 +1,6 @@
 import React from "react";
-// import { Link, useParams } from "react-router-dom";
 import useSWR from "swr";
 import { fetcher } from "../fetcher";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/photography.scss";
 import { ImageCard } from "../component/card";
 import { Row, Col, Container, Placeholder } from "react-bootstrap";
