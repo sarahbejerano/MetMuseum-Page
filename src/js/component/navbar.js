@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Nav, Form, FormControl, Button, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, Form, FormControl, Button, NavDropdown } from "react-bootstrap";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/navbar.scss";
@@ -30,19 +30,14 @@ export const PageNavbar = () => {
 						<Nav.Link href="/painting">Painting</Nav.Link>
 						<Nav.Link href="/photography">Photography</Nav.Link>
 						{Object.keys(store.favorites).length > 0 && (
-							<Dropdown>
-								<Dropdown.Toggle variant="danger" id="dropdown-basic">
-									Favorites
-								</Dropdown.Toggle>
-								<Dropdown.Menu>
-									{Object.keys(store.favorites).map(id => (
-										<Dropdown.Item key={id} href={`detail/${id}`}>
-											{" "}
-											{store.favorites[id]}
-										</Dropdown.Item>
-									))}
-								</Dropdown.Menu>
-							</Dropdown>
+							<NavDropdown title="Favorites" menuVariant="dark" id="dropdown-basic">
+								{Object.keys(store.favorites).map(id => (
+									<NavDropdown.Item key={id} href={`detail/${id}`}>
+										{" "}
+										{store.favorites[id]}
+									</NavDropdown.Item>
+								))}
+							</NavDropdown>
 						)}
 					</Nav>
 					<Form className="d-flex">
